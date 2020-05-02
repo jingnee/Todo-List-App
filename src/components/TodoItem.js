@@ -2,10 +2,14 @@ import React, { Component } from 'react';
 import './TodoItem.css';
 
 class TodoItem extends Component {
+    shouldComponentUpdate(nextProps, nextState) {
+        return this.props.checked !== nextProps.checked;
+    }
+    
     render() {
         const {todoText, checked, id, myToggle, myRemove} = this.props;
         return (
-            <div className="todo-item" onClick={() => myToggle()}>
+            <div className="todo-item" onClick={() => myToggle(id)}>
                 <div className="remove" onClick={(e) => {
                     //버블업(event 전파) 방지 되도록
                     e.stopPropagation();

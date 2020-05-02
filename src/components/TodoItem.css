@@ -9,7 +9,7 @@
     background: #e3fafc;
     }
 /* todo-item 에 마우스가 있을때만 remove 보이기*/
-.todo-item:hover.remove {
+.todo-item:hover .remove {
     opacity: 1;
 }
 /* todo-item 사이에윗테두리*/
